@@ -1,0 +1,16 @@
+body {
+  background-color: rgb(255 247 237);
+  font-family: 'Noto Sans Mono', monospace;
+}
+
+h1, h2 {
+  /* font-family: 'Noto Sans Mono', monospace; */
+  font-family: 'Rubik Mono One', sans-serif;
+}
+
+
+/* #gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1.2em;
+} */
