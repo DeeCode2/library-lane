@@ -16,7 +16,7 @@ const Navbar = () => {
                     <h1 className="text-md md:text-2xl text-[#080401]">World Explorer</h1>
                 </div>
 
-                <Link to={"/newlocation"} className="border py-2 px-3 text-center rounded-full bg-[rgba(245,245,245,0.7)] hover:bg-[rgba(245,245,245,1)] focus:bg-[rgba(245,245,245,1)]">New place</Link>
+                <a href="/newlocation" className="border py-2 px-3 text-center rounded-full bg-[rgba(245,245,245,0.7)] hover:bg-[rgba(245,245,245,1)] focus:bg-[rgba(245,245,245,1)]">New place</a>
                 
             </div>
         </nav>
