@@ -46,7 +46,7 @@ const Gallery = () => {
     const Modal = ({ closeModal, data }) => {
         return (
             <div className="fixed top-0 left-0 w-full h-full bg-gray-400 bg-opacity-70 backdrop-blur-sm flex items-center justify-center p-6 z-50 text-[#080401]">
-                <div id="modal" className="relative rounded bg-white p-8 w-full max-w-4xl sm:aspect-[4/3] overflow-y-scroll">
+                <div id="modal" className="relative rounded bg-white p-8 w-full max-w-3xl lg:max-h-[600px] sm:aspect-[4/3] overflow-y-scroll">
                     <h2 className="text-5xl mb-2">{data.name}</h2>
                     <p className="text-sm text-gray-600 font-semibold mb-4">{data.primaryDescription}</p>
                     <p className="text-md mb-4 lg:max-w-md">{data.secondaryDescription}</p>
@@ -145,7 +145,7 @@ const Gallery = () => {
             <Filters />
             <section className="mx-24 sm:mx-12 px-4 text-[#080401]">
                 <div className="flex items-center mb-4">
-                    <h2 className="text-3xl mr-4">Places</h2>
+                    {/* <h2 className="text-3xl mr-4">Places</h2> */}
                     <ul>
                         {filterOn.isFiltered && <li className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-300">{filterOn.data} x</li>}
                     </ul>    
