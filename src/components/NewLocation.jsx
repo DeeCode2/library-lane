@@ -60,80 +60,84 @@ const NewLocation = () => {
 
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-400 bg-opacity-70 backdrop-blur-sm z-50 sm:py-12 overflow-y-scroll">
-            <form onSubmit={handleSubmit} className="rounded sm:w-3/4 max-w-2xl m-auto p-6 bg-gray-100 sm:overflow-y-scroll sm:aspect-[1/0.9]">
-                <div className="flex flex-col mb-4">
-                    <label for="name" className="mb-2 font-semibold">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        onChange={(e) => setName(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    />
-                </div>
+            <div className="p-6 md:rounded bg-gray-100 md:max-w-2xl m-auto">
+                <form onSubmit={handleSubmit} className="">
+                    <p className="mb-4 font-bold text-3xl">Add a new location</p>
+                    <div className="flex flex-col mb-4">
+                        <label for="name" className="mb-2 font-semibold">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            onChange={(e) => setName(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        />
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="thumbnail" className="mb-2 font-semibold">Image link</label>
-                    <input
-                        type="text"
-                        id="thumbnail"
-                        onChange={(e) => setThumbnail(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    />
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="thumbnail" className="mb-2 font-semibold">Image link</label>
+                        <input
+                            type="text"
+                            id="thumbnail"
+                            onChange={(e) => setThumbnail(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        />
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="primary-desc" className="mb-2 font-semibold">Primary Description</label>
-                    <textarea
-                        id="primary-desc"
-                        onChange={(e) => setPrimaryDesc(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    >
-                    </textarea>
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="primary-desc" className="mb-2 font-semibold">Primary Description</label>
+                        <textarea
+                            id="primary-desc"
+                            onChange={(e) => setPrimaryDesc(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        >
+                        </textarea>
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="secondary-desc" className="mb-2 font-semibold">Secondary Description</label>
-                    <textarea
-                        id="secondary-desc"
-                        onChange={(e) => setSecondaryDesc(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    >
-                    </textarea>
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="secondary-desc" className="mb-2 font-semibold">Secondary Description</label>
+                        <textarea
+                            id="secondary-desc"
+                            onChange={(e) => setSecondaryDesc(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        >
+                        </textarea>
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="address" className="mb-2 font-semibold">Address</label>
-                    <input
-                        type="text"
-                        id="address"
-                        onChange={(e) => setAddress(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    />
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="address" className="mb-2 font-semibold">Address</label>
+                        <input
+                            type="text"
+                            id="address"
+                            onChange={(e) => setAddress(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        />
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="geopoint" className="mb-2 font-semibold">Geopoint (latitude, longitude)</label>
-                    <input
-                        type="text"
-                        id="geopoint"
-                        onChange={(e) => setGeopoint(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    />
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="geopoint" className="mb-2 font-semibold">Geopoint (latitude, longitude)</label>
+                        <input
+                            type="text"
+                            id="geopoint"
+                            onChange={(e) => setGeopoint(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        />
+                    </div>
 
-                <div className="flex flex-col mb-4">
-                    <label for="tags" className="mb-2 font-semibold">Tags</label>
-                    <textarea 
-                        id="tags" 
-                        name="tags" 
-                        onChange={(e) => setTags(e.target.value)}
-                        className="rounded p-3 bg-gray-200"
-                    >
-                    </textarea>
-                </div>
+                    <div className="flex flex-col mb-4">
+                        <label for="tags" className="mb-2 font-semibold">Tags</label>
+                        <textarea 
+                            id="tags" 
+                            name="tags" 
+                            onChange={(e) => setTags(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        >
+                        </textarea>
+                    </div>
 
-                <button className="p-2 rounded bg-green-100 border">Submit</button>
-            </form>
+                    <button className="p-2 rounded bg-green-100 border">Submit</button>
+                </form>    
+            </div>
+            
         </div>
     )
 }

@@ -45,17 +45,17 @@ const Gallery = () => {
     //modal for detail
     const Modal = ({ closeModal, data }) => {
         return (
-            <div className="fixed top-0 left-0 w-full h-full bg-gray-400 bg-opacity-70 backdrop-blur-sm flex items-center justify-center p-6 z-50 text-[#080401]">
-                <div id="modal" className="relative rounded bg-white p-8 w-full max-w-3xl lg:max-h-[600px] sm:aspect-[4/3] overflow-y-scroll">
-                    <h2 className="text-5xl mb-2">{data.name}</h2>
+            <div className="fixed top-0 left-0 w-full h-full md:p-6 overflow-y-scroll bg-gray-400 bg-opacity-70 backdrop-blur-sm flex items-center justify-center  z-50 text-[#080401]">
+                <div id="modal" className="relative rounded bg-white p-4 md:p-8 w-full max-w-3xl lg:max-h-[600px] sm:aspect-[4/3] overflow-y-scroll h-screen">
+                    <h2 className="text-2xl md:text-4xl mb-2">{data.name}</h2>
                     <p className="text-sm text-gray-600 font-semibold mb-4">{data.primaryDescription}</p>
                     <p className="text-md mb-4 lg:max-w-md">{data.secondaryDescription}</p>
                     <p className="font-bold">Address</p>
                     <p className="mb-4">{data.address}</p>
-                    <ul className="flex">
+                    <ul className="flex flex-wrap gap-2">
                         {data.tags.map((tag) => {
                             return (
-                                <li className="mr-2 py-0.5 px-1.5 rounded bg-green-100">{tag}</li>
+                                <li className="py-0.5 px-1.5 rounded bg-green-100">{tag}</li>
                             )
                         })}
                     </ul>
@@ -102,8 +102,8 @@ const Gallery = () => {
     const Filters = () => {
 
         return (
-            <section className="mx-24 sm:mx-12 px-4 mb-4 text-[#080401]">
-                <h2 className="text-5xl mt-24 mb-4 max-w-2xl">Where are you going today?</h2>
+            <section className="mx-3 md:mx-12 px-4 mb-4 text-[#080401]">
+                <h2 className="text-2xl md:text-4xl mt-24 mb-4 max-w-2xl">Where are you going today?</h2>
 
                 <div className="overflow-x-scroll">
                     <ul className="flex mb-4">
@@ -143,7 +143,7 @@ const Gallery = () => {
     return (
         <>
             <Filters />
-            <section className="mx-24 sm:mx-12 px-4 text-[#080401]">
+            <section className="mx-3 md:mx-12 px-4 text-[#080401]">
                 <div className="flex items-center mb-4">
                     {/* <h2 className="text-3xl mr-4">Places</h2> */}
                     <ul>
@@ -151,13 +151,13 @@ const Gallery = () => {
                     </ul>    
                 </div>
                 
-                <div id="gallery" className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 gap-5">
-                    <div onClick={() => {navigate('/newlocation');}}>
+                <div id="gallery" className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5">
+                    {/* <div onClick={() => {navigate('/newlocation');}}>
                         <div className="rounded mb-1 cursor-pointer bg-white border border-gray-200 p-8">
                             <img src={AddIcon} className="scale-50"/>
                         </div>
                         <p className="font-bold">Add a new location</p>
-                    </div>
+                    </div> */}
                     {cards}
                 </div>
                 {modal.show && modal.data && <Modal closeModal={handleClose} data={modal.data} />}
