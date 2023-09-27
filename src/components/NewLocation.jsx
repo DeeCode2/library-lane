@@ -46,7 +46,7 @@ const NewLocation = () => {
             thumbnail: thumbnail,
             primaryDescription: primaryDesc,
             secondaryDescription: secondaryDesc,
-            placeId: locations.length + 1,
+            placeId: locations[locations.length - 1].placeId + 1,
             address: address,
             geopoints: [parseFloat(geopoint.split(", ")[0]), parseFloat(geopoint.split(", ")[1])],
             tags: tags.split(", ")

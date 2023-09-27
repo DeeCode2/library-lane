@@ -4,6 +4,7 @@ export const categories = [
     "Cafe",
     "Bakery",
     "Bar",
+    "Adventure",
     "Lifestyle",
     "Nature",
     "Shopping",

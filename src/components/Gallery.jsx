@@ -4,8 +4,9 @@ import { collection, doc, getDocs } from "firebase/firestore";
 import  { db }  from '../config/firebase.jsx';
 import Map from "./Map.jsx";
 //import Filters from "./Filters.jsx";
-import AddIcon from "../assets/plus-icon.png"
+//import AddIcon from "../assets/plus-icon.png"
 import { categories } from "./categories.js";
+import { twMerge } from "tailwind-merge";
 
 const Gallery = () => {
 
@@ -77,26 +78,29 @@ const Gallery = () => {
             </div>
         )
     }
-
+    
     //FILTERS
     const filterLocations = (e) => {
         
         if (filterOn.isFiltered == false) {
             setFilterOn({isFiltered: true, data: e.target.dataset.cat})
+            //e.target.innerHTML = <li>{e.target.dataset.cat} X</li>
+            //console.log(e.target.innerHTML)
             //console.log(e.target)
-            e.target.classList.remove("unselected");
-            e.target.classList.add("selected");
+            //e.target = <li key={e.target.dataset.cat} data-cat={e.target.dataset.cat} onClick={filterLocations} className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-100">{e.target.dataset.cat} X</li>
 
         } else if (filterOn.data != null && filterOn.data !== e.target.dataset.cat) {
             setFilterOn({isFiltered: true, data: e.target.dataset.cat})
-            //remove the selected class from the previously selected tag
-            //console.log(document.querySelectorAll("[data-cat]"))
+            //e.target.classList.remove("clicked");
 
         } else {
             setFilterOn({isFiltered: false, data: null})
-            e.target.classList.add("unselected");
+            //e.target.classList.remove("clicked");
         }
+
     }
+
+    
 
 
     const Filters = () => {
@@ -110,7 +114,7 @@ const Gallery = () => {
                         {
                             categories.map((category) => {
                                 return (
-                                    <li key={category} data-cat={category} onClick={filterLocations} className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-100">{category}</li>
+                                    <li key={category} data-cat={category} onClick={filterLocations} className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-100 hover:bg-green-300">{category}</li>
                                 )
                             })
                         }
@@ -144,13 +148,8 @@ const Gallery = () => {
         <>
             <Filters />
             <section className="mx-3 md:mx-12 px-4 text-[#080401]">
-                <div className="flex items-center mb-4">
-                    {/* <h2 className="text-3xl mr-4">Places</h2> */}
-                    <ul>
-                        {filterOn.isFiltered && <li className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-300">{filterOn.data} x</li>}
-                    </ul>    
-                </div>
                 
+                {filterOn.isFiltered && <ul className="w-max mb-4"><li key={filterOn.data} data-cat={filterOn.data} onClick={filterLocations} className="mr-2 py-0.5 px-1.5 rounded cursor-pointer bg-green-100 hover:bg-green-300">{filterOn.data} X</li></ul>}
                 <div id="gallery" className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5">
                     {/* <div onClick={() => {navigate('/newlocation');}}>
                         <div className="rounded mb-1 cursor-pointer bg-white border border-gray-200 p-8">

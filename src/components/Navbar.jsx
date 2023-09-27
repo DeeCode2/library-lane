@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between">
                 <div id="logo" className="flex items-center">
                     <div className="aspect-square max-w-[50px] mr-2">
-                        <img src={PlaneIcon}/> 
+                        <img className="w-full" src={PlaneIcon}/> 
                     </div>
                     
                     <h1 className="text-md md:text-2xl text-[#080401]">Explorer Hub</h1>
