@@ -19,7 +19,7 @@ const NewLocation = () => {
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id}));
                 
-                setLocations(newData);
+                setLocations(newData.sort((a, b) => a.placeId - b.placeId));
                 //console.log(locations)
             })
     }
