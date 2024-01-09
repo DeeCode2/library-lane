@@ -8,3 +8,17 @@ h1, h2 {
   font-family: 'Rubik Mono One', sans-serif;
 }
 
+.filter-wrapper li:hover .indicator {
+  background-color: #080401;
+}
+
+.indicator {
+  width: 15px;
+  aspect-ratio: 1/1;
+  border: solid 1px #080401;
+  border-radius: 50%;
+}
+
+.selected-filter {
+  background-color: #080401;  
+}

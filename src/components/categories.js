@@ -1,13 +1,11 @@
 
 export const categories = [
-    "Restaurant",
-    "Cafe",
-    "Bakery",
-    "Bar",
-    "Adventure",
-    "Lifestyle",
-    "Nature",
-    "Shopping",
-    "Culture",
-    "Sightseeing"
+    "Barking and Dagenham",
+    "Camden",
+    "Greenwich",
+    "Hounslow",
+    "Lewisham",
+    "Southwark",
+    "Tower Hamlets",
+    "Westminster",
 ]

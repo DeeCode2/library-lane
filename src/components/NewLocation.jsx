@@ -7,11 +7,13 @@ const NewLocation = () => {
     const [locations, setLocations] = useState([]);
     const [name, setName] = useState("");
     const [thumbnail, setThumbnail] = useState("");
-    const [primaryDesc, setPrimaryDesc] = useState("");
-    const [secondaryDesc, setSecondaryDesc] = useState("");
+    //const [primaryDesc, setPrimaryDesc] = useState("");
+    //const [secondaryDesc, setSecondaryDesc] = useState("");
+    const [website, setWebsite] = useState("");
     const [address, setAddress] = useState("");
     const [geopoint, setGeopoint] = useState("");
     const [tags, setTags] = useState("");
+    const [locationsLength, setLocationsLength] = useState();
 
     const fetchPlaces = async () => {
         await getDocs(collection(db, "places"))
@@ -20,7 +22,7 @@ const NewLocation = () => {
                     .map((doc) => ({...doc.data(), id:doc.id}));
                 
                 setLocations(newData.sort((a, b) => a.placeId - b.placeId));
-                //console.log(locations)
+                setLocationsLength(newData.length)
             })
     }
 
@@ -28,7 +30,7 @@ const NewLocation = () => {
         fetchPlaces();
     }, [])
 
-    console.log(locations)
+    let currentLength = locationsLength + 1
 
     const insertDoc = async (placeObj) => {
         await addDoc(collection(db, "places"), placeObj);
@@ -40,23 +42,34 @@ const NewLocation = () => {
         //const geo = new GeoPoint ( latitude :  parseFloat(geopoint.split(", ")[0]) ,  longitude :  parseFloat(geopoint.split(", ")[1]) ) : GeoPoint
 
         
+        
 
         const place = {
             name: name,
             thumbnail: thumbnail,
-            primaryDescription: primaryDesc,
-            secondaryDescription: secondaryDesc,
-            placeId: locations[locations.length - 1].placeId + 1,
+            //primaryDescription: primaryDesc,
+            //secondaryDescription: secondaryDesc,
+            placeId: currentLength + 1,
             address: address,
             geopoints: [parseFloat(geopoint.split(", ")[0]), parseFloat(geopoint.split(", ")[1])],
+            website: website,
             tags: tags.split(", ")
             //address: [address, [geopoi]]
         }
 
         insertDoc(place)
 
+        currentLength++
+
+        //setCurrentLength(currentLength + 1)
+
         console.log("place added!")
+        //location.reload();
+
+        console.log(locations)
     }
+
+    
 
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-gray-400 bg-opacity-70 backdrop-blur-sm z-50 sm:py-12 overflow-y-scroll">
@@ -83,7 +96,7 @@ const NewLocation = () => {
                         />
                     </div>
 
-                    <div className="flex flex-col mb-4">
+                    {/* <div className="flex flex-col mb-4">
                         <label for="primary-desc" className="mb-2 font-semibold">Primary Description</label>
                         <textarea
                             id="primary-desc"
@@ -101,7 +114,7 @@ const NewLocation = () => {
                             className="rounded p-3 bg-gray-200"
                         >
                         </textarea>
-                    </div>
+                    </div> */}
 
                     <div className="flex flex-col mb-4">
                         <label for="address" className="mb-2 font-semibold">Address</label>
@@ -109,6 +122,16 @@ const NewLocation = () => {
                             type="text"
                             id="address"
                             onChange={(e) => setAddress(e.target.value)}
+                            className="rounded p-3 bg-gray-200"
+                        />
+                    </div>
+
+                    <div className="flex flex-col mb-4">
+                        <label for="website" className="mb-2 font-semibold">Website</label>
+                        <input
+                            type="text"
+                            id="website"
+                            onChange={(e) => setWebsite(e.target.value)}
                             className="rounded p-3 bg-gray-200"
                         />
                     </div>
