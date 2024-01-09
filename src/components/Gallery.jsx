@@ -174,15 +174,13 @@ const Gallery = () => {
             <section className="mx-3 md:mx-12 px-4 text-[#080401]">
                 
                 {
-                    filterOn.isFiltered ?
+                    filterOn.isFiltered &&
                     <ul className="w-max mb-4">
                         <li key={filterOn.data} data-cat={filterOn.data} onClick={filterLocations} className="flex items-center gap-1 border border-[#080401] font-bold py-0.5 px-2.5 rounded-full cursor-pointer">
                         <div className="indicator bg-[#080401]"></div>
                         {filterOn.data}
                         </li>
                     </ul>
-                    :
-                    <h3>No bookstores found</h3>
                 }
                 <div id="gallery" className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-5">
                     {/* <div onClick={() => {navigate('/newlocation');}}>
