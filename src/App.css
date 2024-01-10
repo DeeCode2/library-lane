@@ -1,6 +1,7 @@
 body {
   background-color: rgb(255 247 237);
   font-family: 'Noto Sans Mono', monospace;
+  overflow-x: hidden;
 }
 
 h1, h2 {
