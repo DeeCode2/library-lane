@@ -124,7 +124,7 @@ const Gallery = () => {
     const Filters = () => {
 
         return (
-            <section className="filter-wrapper mx-3 md:mx-12 px-4 mb-4 text-[#080401]">
+            <section className="filter-wrapper mx-3 md:mx-12 px-4 mb-8 text-[#080401]">
                 <h2 className="text-2xl md:text-4xl mt-24 mb-4 max-w-2xl">Find an independent bookstore in...</h2>
 
                 <div className="">
@@ -161,8 +161,8 @@ const Gallery = () => {
                 <div onClick={openModal} className="rounded flex items-center overflow-hidden aspect-square mb-1 cursor-pointer">
                     <img src={location.thumbnail} className="scale-[2.5]" />
                 </div>
-                <p className="font-bold">{location.name}</p>
-                <p className="">{location.primaryDescription}</p>
+                <p className="text-sm font-bold">{location.name}</p>
+                <p className="text-sm">{location.tags[0]}</p>
             </div>
         )
     })
@@ -171,7 +171,7 @@ const Gallery = () => {
     return (
         <>
             <Filters />
-            <section className="mx-3 md:mx-12 px-4 text-[#080401]">
+            <section className="mx-3 md:mx-12 pb-1 px-4 text-[#080401]">
                 
                 {
                     filterOn.isFiltered &&
