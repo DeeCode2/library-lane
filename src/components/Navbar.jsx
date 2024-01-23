@@ -13,7 +13,7 @@ const Navbar = () => {
                         <img className="w-full" src="icons/library.svg"/> 
                     </div>
                     
-                    <h1 className="text-md md:text-2xl text-[#080401]">Explorer Hub</h1>
+                    <h1 className="text-md md:text-2xl text-[#080401]">Library Lane</h1>
                 </div>
 
                 <a href="/newlocation" className="border py-2 px-3 text-center rounded-full border-[#080401] backdrop-blur-sm hover:bg-[rgba(245,245,245,1)] focus:bg-[rgba(245,245,245,1)]">New place</a>

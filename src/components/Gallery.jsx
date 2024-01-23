@@ -118,9 +118,6 @@ const Gallery = () => {
 
     }
 
-    
-
-
     const Filters = () => {
 
         return (
@@ -147,7 +144,6 @@ const Gallery = () => {
     }
 
     const sortedLocations = locations.sort((a, b) => a.placeId - b.placeId)
-    //console.log(sortedLocations)
 
     let cards = sortedLocations.filter((location) => {
         if (filterOn.isFiltered == false) {
@@ -166,6 +162,8 @@ const Gallery = () => {
             </div>
         )
     })
+
+    
     
     //GALLERY
     return (
